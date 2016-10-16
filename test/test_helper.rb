@@ -9,4 +9,9 @@ if ENV['TRAVIS']
 end
 
 require 'pry'
+require 'active_support'
+require 'active_prepender'
 require 'test/unit'
+
+Dir[File.join(File.dirname(__FILE__), 'fixtures/**/**.rb')].each {|f| require f }
+
