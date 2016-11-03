@@ -2,13 +2,13 @@ module B
   module A
     extend ActiveSupport::Concern
 
-    def ins_meth_1
-      :ins_meth_1_a
+    def my_instance_method
+      "#{super}_with_a"
     end
 
     class_methods do
-      def cls_meth_1
-        :cls_meth_1_a
+      def my_class_method
+        "#{super}_with_a"
       end
     end
   end
@@ -16,13 +16,13 @@ module B
   module B
     extend ActiveSupport::Concern
 
-    def ins_meth_2
-      :ins_meth_2_b
+    def my_instance_method
+      "#{super}_with_b"
     end
 
     class_methods do
-      def cls_meth_2
-        :cls_meth_2_b
+      def my_class_method
+        "#{super}_with_b"
       end
     end
   end
@@ -33,13 +33,13 @@ module B
     include A
     include B
 
-    def ins_meth_3
-      :ins_meth_3_c
+    def my_instance_method
+      "#{super}_with_c"
     end
 
     class_methods do
-      def cls_meth_3
-        :cls_meth_3_c
+      def my_class_method
+        "#{super}_with_c"
       end
     end
   end
@@ -47,13 +47,13 @@ module B
   module D
     include C
 
-    def ins_meth_4
-      :ins_meth_4_d
+    def my_instance_method
+      "#{super}_with_d"
     end
 
     module ClassMethods
-      def cls_meth_4
-        :cls_meth_4_d
+      def my_class_method
+        "#{super}_with_d"
       end
     end
   end
@@ -61,37 +61,13 @@ module B
   class E
     prepend D
 
-    def ins_meth_1
-      :ins_meth_1_e
-    end
-
-    def ins_meth_2
-      :ins_meth_2_e
-    end
-
-    def ins_meth_3
-      :ins_meth_3_e
-    end
-
-    def ins_meth_4
-      :ins_meth_4_e
+    def my_instance_method
+      'my_instance_method_in_e'
     end
 
     class << self
-      def cls_meth_1
-        :cls_meth_1_e
-      end
-
-      def cls_meth_2
-        :cls_meth_2_e
-      end
-
-      def cls_meth_3
-        :cls_meth_3_e
-      end
-
-      def cls_meth_4
-        :cls_meth_4_e
+      def my_class_method
+        'my_class_method_in_e'
       end
     end
   end

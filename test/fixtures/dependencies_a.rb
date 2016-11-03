@@ -1,31 +1,31 @@
 module A
   module A
-    def ins_meth_1
-      :ins_meth_1_a
+    def my_instance_method
+      "#{super}_with_a"
     end
 
     module ClassMethods
-      def cls_meth_1
-        :cls_meth_1_a
+      def my_class_method
+        "#{super}_with_a"
       end
     end
   end
 
   module B
-    def ins_meth_2
-      :ins_meth_2_b
+    def my_instance_method
+      "#{super}_with_b"
     end
 
     module ClassMethods
-      def cls_meth_2
-        :cls_meth_2_b
+      def my_class_method
+        "#{super}_with_b"
       end
     end
   end
 
   module C
-    def ins_meth_3
-      :ins_meth_3_c
+    def my_instance_method
+      "#{super}_with_c"
     end
   end
 
@@ -35,13 +35,13 @@ module A
     include B
     include C
 
-    def ins_meth_4
-      :ins_meth_4_d
+    def my_instance_method
+      "#{super}_with_d"
     end
 
     module ClassMethods
-      def cls_meth_4
-        :cls_meth_4_d
+      def my_class_method
+        "#{super}_with_d"
       end
     end
   end
@@ -49,37 +49,13 @@ module A
   class E
     prepend D
 
-    def ins_meth_1
-      :ins_meth_1_e
-    end
-
-    def ins_meth_2
-      :ins_meth_2_e
-    end
-
-    def ins_meth_3
-      :ins_meth_3_e
-    end
-
-    def ins_meth_4
-      :ins_meth_4_e
+    def my_instance_method
+      'my_instance_method_in_e'
     end
 
     class << self
-      def cls_meth_1
-        :cls_meth_1_e
-      end
-
-      def cls_meth_2
-        :cls_meth_2_e
-      end
-
-      def cls_meth_3
-        :cls_meth_3_e
-      end
-
-      def cls_meth_4
-        :cls_meth_4_e
+      def my_class_method
+        'my_class_method_in_e'
       end
     end
   end
@@ -90,13 +66,13 @@ module A
     include B
     include C
 
-    def ins_meth_4
-      :ins_meth_4_f
+    def my_instance_method
+      "#{super}_with_f"
     end
 
     module ClassMethods
-      def cls_meth_4
-        :cls_meth_4_f
+      def my_class_method
+        "#{super}_with_f"
       end
     end
   end
@@ -108,37 +84,13 @@ module A
   class H
     prepend G
 
-    def ins_meth_1
-      :ins_meth_1_h
-    end
-
-    def ins_meth_2
-      :ins_meth_2_h
-    end
-
-    def ins_meth_3
-      :ins_meth_3_h
-    end
-
-    def ins_meth_4
-      :ins_meth_4_h
+    def my_instance_method
+      'my_instance_method_in_h'
     end
 
     class << self
-      def cls_meth_1
-        :cls_meth_1_h
-      end
-
-      def cls_meth_2
-        :cls_meth_2_h
-      end
-
-      def cls_meth_3
-        :cls_meth_3_h
-      end
-
-      def cls_meth_4
-        :cls_meth_4_h
+      def my_class_method
+        'my_class_method_in_h'
       end
     end
   end
