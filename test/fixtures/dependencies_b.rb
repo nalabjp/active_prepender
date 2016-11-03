@@ -29,7 +29,7 @@ module B
 
   module C
     extend ActiveSupport::Concern
-    extend ActivePrepender::WithConcern
+    extend ActivePrepender::WithInclude
     include A
     include B
   end

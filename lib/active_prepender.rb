@@ -9,7 +9,7 @@ module ActivePrepender
     end
   end
 
-  module WithConcern
+  module WithInclude
     def append_features(base)
       return false if super == false
 

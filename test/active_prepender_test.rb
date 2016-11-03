@@ -13,7 +13,7 @@ class ActivePrependerTest < Test::Unit::TestCase
     end
   end
 
-  sub_test_case 'ActivePrepender::WithConcern' do
+  sub_test_case 'ActivePrepender::WithInclude' do
     test 'methods' do
       assert_equal :ins_meth_1_a, B::E.new.ins_meth_1
       assert_equal :ins_meth_2_b, B::E.new.ins_meth_2
