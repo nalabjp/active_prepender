@@ -14,7 +14,18 @@ class ActivePrependerTest < Test::Unit::TestCase
   end
 
   sub_test_case 'ActivePrepender::WithInclude' do
-    test 'methods' do
+    test 'without ActiveSupport::Concern' do
+      assert_equal :ins_meth_1_a, A::H.new.ins_meth_1
+      assert_equal :ins_meth_2_b, A::H.new.ins_meth_2
+      assert_equal :ins_meth_3_c, A::H.new.ins_meth_3
+      assert_equal :ins_meth_4_f, A::H.new.ins_meth_4
+      assert_equal :cls_meth_1_a, A::H.cls_meth_1
+      assert_equal :cls_meth_2_b, A::H.cls_meth_2
+      assert_equal :cls_meth_3_h, A::H.cls_meth_3
+      assert_equal :cls_meth_4_f, A::H.cls_meth_4
+    end
+
+    test 'with ActiveSupport::Concern' do
       assert_equal :ins_meth_1_a, B::E.new.ins_meth_1
       assert_equal :ins_meth_2_b, B::E.new.ins_meth_2
       assert_equal :ins_meth_3_d, B::E.new.ins_meth_3
