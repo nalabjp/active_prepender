@@ -32,18 +32,28 @@ module B
     extend ActivePrepender::WithInclude
     include A
     include B
+
+    def ins_meth_3
+      :ins_meth_3_c
+    end
+
+    class_methods do
+      def cls_meth_3
+        :cls_meth_3_c
+      end
+    end
   end
 
   module D
     include C
 
-    def ins_meth_3
-      :ins_meth_3_d
+    def ins_meth_4
+      :ins_meth_4_d
     end
 
     module ClassMethods
-      def cls_meth_3
-        :cls_meth_3_d
+      def cls_meth_4
+        :cls_meth_4_d
       end
     end
   end
@@ -63,6 +73,10 @@ module B
       :ins_meth_3_e
     end
 
+    def ins_meth_4
+      :ins_meth_4_e
+    end
+
     class << self
       def cls_meth_1
         :cls_meth_1_e
@@ -74,6 +88,10 @@ module B
 
       def cls_meth_3
         :cls_meth_3_e
+      end
+
+      def cls_meth_4
+        :cls_meth_4_e
       end
     end
   end
