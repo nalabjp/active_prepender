@@ -1,7 +1,7 @@
 require 'test_helper'
 class ActivePrependerTest < Test::Unit::TestCase
   sub_test_case 'ActivePrepender' do
-    test 'methods' do
+    test 'Simple usecase' do
       assert_equal :ins_meth_1_a, A::E.new.ins_meth_1
       assert_equal :ins_meth_2_b, A::E.new.ins_meth_2
       assert_equal :ins_meth_3_c, A::E.new.ins_meth_3
