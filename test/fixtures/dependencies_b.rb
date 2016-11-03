@@ -37,10 +37,6 @@ module B
   module D
     include C
 
-    def self.prepended(base)
-      base.singleton_class.prepend(ClassMethods)
-    end
-
     def ins_meth_3
       :ins_meth_3_d
     end

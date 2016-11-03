@@ -11,20 +11,9 @@ module ActivePrepender
 
   module WithConcern
     def append_features(base)
-      ret = super
+      return false if super == false
 
-      return ret if ret == false
-      return if @_dependencies.nil?
-
-      cmethod_dependencies = @_dependencies.map { |dep| dep.const_get(:ClassMethods) rescue nil }.compact
-      base.instance_variable_set(:@_cmethod_dependencies, cmethod_dependencies)
-
-      base.singleton_class.prepend(Module.new {
-        def prepended(kls)
-          super
-          @_cmethod_dependencies.each { |dep| kls.singleton_class.prepend(dep) }
-        end
-      })
+      base.extend(ActivePrepender)
     end
   end
 end
