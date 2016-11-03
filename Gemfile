@@ -4,10 +4,12 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
+  gem 'activesupport'
   gem 'pry'
   gem 'pry-power_assert'
   gem 'pry-doc'
   gem 'pry-byebug'
+
 end
 
 group :test do
