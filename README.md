@@ -64,6 +64,9 @@ p MyClass.my_class_method
 
 p MyClass.ancestors
 # => [BaseModule, FeatureModule, MyClass, Object, PP::ObjectMixin, Kernel, BasicObject]
+
+p MyClass.singleton_class.ancestors
+# => [BaseModule::ClassMethods, FeatureModule::ClassMethods, #<Class:MyClass>, #<Class:Object>, #<Class:BasicObject>, Class, Module, Object, PP::ObjectMixin, Kernel, BasicObject]
 ```
 
 ### Include nested modules
@@ -147,6 +150,9 @@ p MyClass.my_class_method
 
 p MyClass.ancestors
 # => [ExtendedModule, BaseModule, FeatureModule2, FeatureModule1, MyClass, Object, PP::ObjectMixin, Kernel, BasicObject]
+
+p MyClass.singleton_class.ancestors
+# => [ExtendedModule::ClassMethods, FeatureModule2::ClassMethods, FeatureModule1::ClassMethods, BaseModule::ClassMethods, FeatureModule::ClassMethods, #<Class:MyClass>, #<Class:Object>, #<Class:BasicObject>, Class, Module, Object, PP::ObjectMixin, Kernel, BasicObject]
 ```
 
 ### With ActiveSupport::Concern
@@ -237,6 +243,9 @@ p MyClass.my_class_method
 
 p MyClass.ancestors
 # => [ExtendedModule, BaseModule, FeatureModule2, FeatureModule1, MyClass, Object, PP::ObjectMixin, Kernel, BasicObject]
+
+p MyClass.singleton_class.ancestors
+# => [ExtendedModule::ClassMethods, FeatureModule2::ClassMethods, FeatureModule1::ClassMethods, BaseModule::ClassMethods, FeatureModule::ClassMethods, #<Class:MyClass>, #<Class:Object>, #<Class:BasicObject>, Class, Module, Object, PP::ObjectMixin, Kernel, BasicObject]
 ```
 
 ## License
